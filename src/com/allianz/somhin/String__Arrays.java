@@ -2,7 +2,7 @@ package com.allianz.somhin;
 
 public class String__Arrays {
 	public static void main(String[] args) {
-
+		twoDArray();
 	}
 
 	public static void lab1() {
@@ -73,26 +73,26 @@ public class String__Arrays {
 
 //	
 //	Lab13 Section
-//	
-//	public static void twoDArray() {
-//		int[][] twoD_Array = { { 1, 2, 3, 4 }, { 4, 14, 2, 5, 5 }, { 7, 3, 4 }, { 1 } };
-//
-//		int sum = 0;
-//		int indexRow = 0;
-//		for (int[] row : twoD_Array) {
-//
-//			int indexCol = 0;
-//			for (int column : row) {
-//				System.out.print(column + " ");
-//				if (column == twoD_Array.length - 1) {
-//					sum = sum + row[indexCol];
-//				}
-//				indexCol++;
-//			}
-//			indexRow++;
-//
-//			System.out.println();
-//		}
-//		System.out.println("Total sum is: " + sum);
-//	}
+	
+	public static void twoDArray() {
+		int[][] twoD_Array = { { 1, 2, 3, 4 }, { 4, 14, 2, 5, 5 }, { 7, 3, 4 }, { 1 } };
+
+		int sum = 0;
+		int indexRow = 0;
+		for (int[] row : twoD_Array) {
+
+			int indexCol = 0;
+			for (int column : row) {
+				System.out.print(column + " ");
+				if (column == twoD_Array.length - 1) {
+					sum = sum += twoD_Array[indexRow][indexCol];
+				}
+				indexCol++;
+			}
+			indexRow++;
+
+			System.out.println();
+		}
+		System.out.println("Total sum is: " + sum);
+	}
 }
