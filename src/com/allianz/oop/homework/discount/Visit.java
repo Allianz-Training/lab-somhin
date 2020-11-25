@@ -8,9 +8,9 @@ public class Visit {
 	private double serviceExpense;
 	private double productExpense;
 	
-	public Visit(String name, Date date) {
-		customer = new Customer(name);
-		this.date = date;
+	public Visit(String name, String type, Date date) {
+		customer = new Customer(name, type);
+		this.date = new Date();
 	}
 	
 	public String getName() {
@@ -33,8 +33,18 @@ public class Visit {
 		this.productExpense = ex;
 	}
 	
+	public Customer getCustomer() {
+		return customer;
+	}
+	
 	public double getTotalExpense() {
-		return serviceExpense + productExpense;
+		if(customer.isMember() == true) {
+			DiscountRate rate = new DiscountRate();
+			return (productExpense * (1 - rate.getProductDiscountRate(customer.getMemberType())))
+					+ (serviceExpense * (1 - rate.getServiceDiscountRate(customer.getMemberType())));
+		} else {
+			return productExpense + serviceExpense; 
+		}
 	}
 
 	@Override

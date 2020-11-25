@@ -18,7 +18,7 @@ public class DiscountRate {
 		case "Silver":
 			return serviceDiscountSilver;
 		default:
-			return 1;
+			return 0;
 		}
 	}
 
@@ -31,7 +31,7 @@ public class DiscountRate {
 		case "Silver":
 			return productDiscountSilver;
 		default:
-			return 1;
+			return 0;
 		}
 	}
 
