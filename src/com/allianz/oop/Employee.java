@@ -28,20 +28,40 @@ package com.allianz.oop;
 public class Employee {
 	public String firstname;
 	public String lastname;
-	private int salary;
 	public String position;
+	
+	private int salary;
+	
+	public static int freeBeerLeft = 20;
+	public static boolean newEmployee = true;
 	
 	public static void main(String[] args) {
 //		#1 new instance
-		Employee em1 = new Employee("somhin", "phipat", "Front-End Developer", 50000);
+//		Employee em1 = new Employee("somhin", "phipat", "Front-End Developer", 50000);
 //		#try executing methods
 //		em1.hello();
 //		System.out.println(em1.getSalary());
 //		em1.getPosition();
-		
+//		
 //		#2 new instance
-		Employee em2 = new Employee("Phipat", "Limprasutr", "Janitor", 100000);
+//		Employee em2 = new Employee("Phipat", "Limprasutr", "Janitor", 100000);
 //		System.out.println(em2.getFullName());
+//		System.out.println(em2.isANewEmployee());
+//		System.out.println(em2.getBeer());
+		
+//		Arrays constructor
+//		Employee[] employees = new Employee[3];
+//		for (int i = 0; i < employees.length; i++) {
+//			employees[i] = new Employee("First name " + i, "last " + i, "position " + i, 10000 * i);
+//		}
+//		
+//		System.out.println(employees[1].firstname);
+//		System.out.println(employees[2].firstname);
+//		System.out.println(employees[1].getFullName());
+//		System.out.println(employees[1].position);
+		
+//		Class structure (Extended Class)
+		
 	}
 	
 //	
@@ -70,4 +90,13 @@ public class Employee {
 	public String getFullName() {
 		return firstname + " " + lastname;
 	}
+	
+	public static int getBeer() {
+		return freeBeerLeft;
+	}
+	
+	public static boolean isANewEmployee() {
+		return newEmployee;
+	}
+	
 }
