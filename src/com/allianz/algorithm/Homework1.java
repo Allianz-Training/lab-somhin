@@ -1,4 +1,4 @@
-package com.allianz.somhin;
+package com.allianz.algorithm;
 
 public class Homework1 {
 	public static void main(String[] args) {

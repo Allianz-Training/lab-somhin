@@ -1,4 +1,4 @@
-package com.allianz.somhin;
+package com.allianz.algorithm;
 
 public class ControlFlow {
 	public static void main(String[] args) {
