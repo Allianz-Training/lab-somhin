@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>javascript</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<div id="lab1">
+			<input type="text" id="value" placeholder="Enter value" />
+			<select name="draw" id="selection">
+				<option value="draw1">Draw 1</option>
+				<option value="draw2">Draw 2</option>
+				<option value="draw3">Draw 3</option>
+				<option value="draw4">Draw 4</option>
+				<option value="draw5">Draw 5</option>
+				<option value="draw6">Draw 6</option>
+				<option value="draw7">Draw 7</option>
+				<option value="draw8">Draw 8</option>
+				<option value="draw9">Draw 9</option>
+				<option value="draw10">Draw 10</option>
+				<option value="draw11">Draw 11</option>
+				<option value="draw12">Draw 12</option>
+				<option value="draw13">Draw 13</option>
+				<option value="draw14">Draw 14</option>
+				<option value="draw15">Draw 15</option>
+				<option value="draw16">Draw 16</option>
+				<option value="draw17">Draw 17</option>
+				<option value="draw18">Draw 18</option>
+				<option value="draw19">Draw 19</option>
+				<option value="draw20">Draw 20</option>
+				<option value="draw21">Draw 21</option>
+				<option value="draw22">Draw 22</option>
+				<option value="draw23">Draw 23</option>
+				<option value="draw24">Draw 24</option>
+			</select>
+			<button onclick="excute()">See the result !</button>
+			<div id="result" style="margin: 20px"></div>
+		</div>
+		<hr />
+		<div id="input">
+			<input type="text" id="col1" placeholder="text color" />
+			<input type="text" id="col2" placeholder="background color" />
+			<button onclick="changeColor()">Change color</button>
+		</div>
+		<h2 style="padding: 1rem; text-align: center">noooooooooo</h2>
+		<script>
+			function excute() {
+				var selection = document.getElementById('selection');
+				var draw = selection.options[selection.selectedIndex].value;
+				var n = document.getElementById('value').value;
+				var result = document.getElementById('result');
+
+				switch (draw) {
+					case 'draw1':
+						let msg = '';
+						result.innerHTML = '';
+						for (let i = 0; i < n; i++) {
+							msg += '*';
+						}
+						result.innerHTML = msg;
+						break;
+					case 'draw2':
+						result.innerHTML = '';
+						for (var i = 0; i < n; i++) {
+							let star = '';
+							for (var j = 0; j < n; j++) {
+								star += '*';
+							}
+							result.innerHTML += star + '<br>';
+						}
+						break;
+					case 'draw3':
+						result.innerHTML = '';
+						for (var i = 0; i < n; i++) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += j + 1;
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw4':
+						result.innerHTML = '';
+						for (var i = 0; i < n; i++) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += i + 1;
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw5':
+						result.innerHTML = '';
+						for (var i = 0; i < n; i++) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += n - i;
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw6':
+						result.innerHTML = '';
+						for (var i = 1; i <= n * n; ) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += i++;
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw7':
+						result.innerHTML = '';
+						for (var i = n * n; i >= 1; ) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += i--;
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw8':
+						result.innerHTML = '';
+						for (var i = 0; i < n; i++) {
+							result.innerHTML += i * 2;
+						}
+						break;
+					case 'draw9':
+						result.innerHTML = '';
+						for (var i = 0; i < n; i++) {
+							result.innerHTML += (i + 1) * 2;
+						}
+						break;
+					case 'draw10':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 1; j <= n; j++) {
+								out += i * j;
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw11':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 1; j <= n; j++) {
+								out += i == j ? '-' : '*';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw12':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 1; j <= n; j++) {
+								out += j == n - (i - 1) ? '-' : '*';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw13':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 1; j <= n; j++) {
+								out += j <= i ? '*' : '-';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw14':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 1; j <= n; j++) {
+								out += j <= n - (i - 1) ? '*' : '-';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw15':
+						result.innerHTML = '';
+						var isN = false;
+						for (var i = 1; i > 0; ) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += j < i ? '*' : '-';
+							}
+							result.innerHTML += out + '<br>';
+							if (isN) {
+								i--;
+							} else {
+								i++;
+								isN = i == n ? true : false;
+							}
+						}
+						break;
+					case 'draw16':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 1; j <= n; j++) {
+								out += j > n - i ? '*' : '-';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw17':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 1; j <= n; j++) {
+								out += j >= i ? '*' : '-';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw18':
+						result.innerHTML = '';
+						var isN = false;
+						for (var i = 1; i > 0; ) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += j >= n - i ? '*' : '-';
+							}
+							result.innerHTML += out + '<br>';
+							if (isN) {
+								i--;
+							} else {
+								i++;
+								isN = i == n ? true : false;
+							}
+						}
+						break;
+					case 'draw19':
+						result.innerHTML = '';
+						var isN = false;
+						var count = 1;
+						for (var i = 1; i > 0; ) {
+							let out = '';
+							for (var j = 0; j < n; j++) {
+								out += j >= n - i ? count++ : '-';
+							}
+							result.innerHTML += out + '<br>';
+							if (isN) {
+								i--;
+							} else {
+								i++;
+								isN = i == n ? true : false;
+							}
+						}
+						break;
+					case 'draw20':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 0; j < n * 2 - 1; j++) {
+								out += j < n - i || j >= n + i - 1 ? '-' : '*';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw21':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 0; j < n * 2 - 1; j++) {
+								out += j < i - 1 || j >= n * 2 - i ? '-' : '*';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw22':
+						result.innerHTML = '';
+						for (var i = 1; i <= n; i++) {
+							let out = '';
+							for (var j = 0; j < n * 2 - 1; j++) {
+								out += j < i - 1 || j >= n * 2 - i ? '-' : '*';
+							}
+							result.innerHTML += out + '<br>';
+						}
+						break;
+					case 'draw23':
+						result.innerHTML = '';
+						var isN = false;
+						for (var i = 1; i > 0; ) {
+							let out = '';
+							for (var j = 0; j < n * 2 - 1; j++) {
+								out += j < n - i || j >= n + i - 1 ? '-' : '*';
+							}
+							result.innerHTML += out + '<br>';
+							if (isN) {
+								i--;
+							} else {
+								i++;
+								isN = i == n ? true : false;
+							}
+						}
+						break;
+					case 'draw24':
+						result.innerHTML = '';
+						var isN = false;
+						var count = 1;
+						for (var i = 1; i > 0; ) {
+							let out = '';
+							for (var j = 0; j < n * 2 - 1; j++) {
+								out += j < n - i || j >= n + i - 1 ? '-' : count++;
+							}
+							result.innerHTML += out + '<br>';
+							if (isN) {
+								i--;
+							} else {
+								i++;
+								isN = i == n ? true : false;
+							}
+						}
+						break;
+				}
+			}
+		</script>
+		<!-- <script>
+			// const e1 = '' + 1 + 0;
+			// const e2 = '' - 1 + 0;
+			// const e3 = true + false;
+			// const e4 = 6 / '3';
+			// const e5 = '2' + '3';
+			// const e6 = 4 + 5 + 'px';
+			// const e7 = '$' + 4 + 5;
+			// const e8 = '4' - 2;
+			// const e9 = '4px' - 2;
+			// const e10 = 7 / 0;
+			// const e11 = ' -9' + 5;
+			// const e12 = ' -9' - 5;
+			// const e13 = null + 1;
+			// const e14 = undefined + 1;
+			// const e15 = ' \t \n' - 2;
+
+			// let balance;
+			// const myParents = 'mom and dad';
+			// let address;
+			// let universeAge;
+
+			// let human;
+			// const name = 'somfuckinghin';
+			// human = name;
+			// console.log(human);
+
+			changeColor = () => {
+				let col1 = document.querySelector('#col1').value;
+				let col2 = document.querySelector('#col2').value;
+
+				alert('Text is changing to ' + col1 + ' with ' + col2 + ' background');
+				document.querySelector('h2').style.color = col1;
+				document.querySelector('h2').style.background = col2;
+			};
+		</script> -->
+	</body>
+</html>
